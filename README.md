@@ -9,7 +9,7 @@ If you want to create public and private subnets using single module you can use
 Module Input Variables
 ----------------------
 
-- `cidr` - VPC CIDR
+- `cidr_block` - VPC CIDR
 - `name` - Name (optional)
 - `enable_dns_support` - should be true if you want to use private DNS within the VPC (optional)
 - `enable_dns_hostnames` - should be true if you want to use private DNS within the VPC (optional)
@@ -23,7 +23,7 @@ module "vpc" {
   source               = "github.com/terraform-community-modules/tf_aws_vpc_only"
 
   name                 = "production"
-  cidr                 = "10.0.0.0/16"
+  cidr_block           = "10.0.0.0/16"
   enable_dns_support   = true
   enable_dns_hostnames = true
 
@@ -38,7 +38,7 @@ Outputs
 =======
 
  - `vpc_id` - VPC id
- - `vpc_cidr` - VPC CIDR block
+ - `vpc_cidr_block` - VPC CIDR block
  - `vpc_default_security_group` - The ID of the security group created by default on VPC creation
 
 Authors
